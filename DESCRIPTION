@@ -1,6 +1,6 @@
 Package: neuroExpressoData
 Title: Includes expression data used in neuroexpresso
-Version: 0.0.0.9000
+Version: 1.0.1.9000
 Authors@R: person("B. Ogan", "Mancarci", email = "ogan.mancarci@gmail.com", role = c("aut", "cre"))
 Description: Just includes data
 Depends: R (>= 1.0.0)

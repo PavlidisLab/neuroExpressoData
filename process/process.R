@@ -5,14 +5,18 @@ library(here)
 setwd(here())
 
 loadGithub('PavlidisLab/neuroExpressoAnalysis/data/n_expressoExpr.rda')
-devtools::use_data(n_expressoExpr)
+usethis::use_data(n_expressoExpr)
 
 loadGithub('PavlidisLab/neuroExpressoAnalysis/data/n_expressoSamples.rda')
-devtools::use_data(n_expressoSamples)
+usethis::use_data(n_expressoSamples)
 
 
 loadGithub('PavlidisLab/neuroExpressoAnalysis/data/TasicMouseExp.rda')
-devtools::use_data(TasicMouseExp)
+usethis::use_data(TasicMouseExp)
 
 loadGithub('PavlidisLab/neuroExpressoAnalysis/data/TasicMouseMeta.rda')
-devtools::use_data(TasicMouseMeta)
+usethis::use_data(TasicMouseMeta)
+
+
+loadGithub('PavlidisLab/neuroExpressoAnalysis/data/regionHierarchy.rda')
+usethis::use_data(regionHierarchy)
