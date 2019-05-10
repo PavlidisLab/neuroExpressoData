@@ -13,3 +13,7 @@
 
 #' Metadata for Tasic et al. 2016 single cell data
 'TasicMouseMeta'
+
+
+#' Hierarchy used to classify brain regions
+'regionHierarchy'
