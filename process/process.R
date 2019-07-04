@@ -23,7 +23,14 @@ loadGithub('PavlidisLab/neuroExpressoAnalysis/data/TasicMouseMeta.rda')
 getGithubFile('PavlidisLab/neuroExpressoAnalysis/data-raw/Mouse_Cell_Type_Data/singleCellMatchings.tsv',
               downloadPath = 'data-raw/singleCellMatchings.tsv')
 singleCellMatchings = read_tsv('data-raw/singleCellMatchings.tsv')
-singleCellMatchings %<>% rename(primary_type = Tasic)
+seq_along(singleCellMatchings$Tasic) %>% lapply(function(i){
+    data.frame(singleCellMatchings[i,,drop=FALSE],
+               primary_type = singleCellMatchings$Tasic[i] %>% strsplit(', ') %>% {.[[1]]},
+               stringsAsFactors = FALSE) ->out
+
+    out = out[,!names(out) %in% 'Tasic']
+}) %>% do.call(rbind,.) -> singleCellMatchings
+
 TasicMouseMeta = left_join(TasicMouseMeta,singleCellMatchings)
 write_tsv(TasicMouseMeta,'data-raw/TasicMouseMeta.tsv')
 
