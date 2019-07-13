@@ -37,5 +37,13 @@ write_tsv(TasicMouseMeta,'data-raw/TasicMouseMeta.tsv')
 usethis::use_data(TasicMouseMeta,overwrite = TRUE)
 
 
+loadGithub('PavlidisLab/neuroExpressoAnalysis/data/n_expressoSamplesWithRNAseq.rda')
+write_tsv(n_expressoSamplesWithRNAseq,'data-raw/n_expressoSamplesWithRNAseq.rda')
+usethis::use_data(n_expressoSamplesWithRNAseq,overwrite = TRUE)
+
+loadGithub('PavlidisLab/neuroExpressoAnalysis/data/n_expressoExprWithRNAseq.rda')
+write_tsv(n_expressoExprWithRNAseq,'data-raw/n_expressoExprWithRNAseq.rda')
+usethis::use_data(n_expressoExprWithRNAseq,overwrite = TRUE)
+
 loadGithub('PavlidisLab/neuroExpressoAnalysis/data/regionHierarchy.rda')
 usethis::use_data(regionHierarchy,overwrite = TRUE)
